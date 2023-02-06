@@ -48,6 +48,15 @@ class ItemRepositoryTest {
 
         for (Item item : itemList)
             System.out.println(item);
+    }
 
+    @Test
+    @DisplayName("상품 가격 내림차순 조회 테스트")
+    public void findItemByPriceLessThanOrderByPriceDescTest() {
+        this.createItemTest();
+        List<Item> itemList = itemRepository.findItemByPriceLessThanOrderByPriceDesc(Integer.MAX_VALUE);
+
+        for (Item item : itemList)
+            System.out.println(item);
     }
 }
