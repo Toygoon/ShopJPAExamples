@@ -19,4 +19,7 @@ public interface ItemRepository extends JpaRepository<Item, Long> {
 
     // 파라미터로 전달된 가격보다 더 저렴한 상품을 찾는 메서드
     List<Item> findItemByPriceLessThan(int price);
+
+    // 파라미터로 전달된 가격보다 더 저렴한 상품을 찾고, 내림차순으로 정렬하는 메서드
+    List<Item> findItemByPriceLessThanOrderByPriceDesc(int price);
 }
