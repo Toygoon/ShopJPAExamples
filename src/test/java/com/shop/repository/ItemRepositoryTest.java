@@ -25,9 +25,9 @@ class ItemRepositoryTest {
         item.setDetail("테스트 상품 상세 설명");
         item.setSold(true);
         item.setStockCount(100);
-        item.setRegDate(LocalDateTime.MIN);
+        item.setRegDate(LocalDateTime.now());
         item.setUpdatedAt(LocalDateTime.now());
 
-        System.out.println(itemRepository.save(item).toString());
+        System.out.println(itemRepository.save(item));
     }
 }
