@@ -12,13 +12,13 @@ import java.time.LocalDateTime;
  */
 
 @Entity
-@Table(name="item")
+@Table(name = "item")
 @Data
 @ToString
 public class Item {
     // 상품 코드
     @Id
-    @Column(name="item_id")
+    @Column(name = "item_id")
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
