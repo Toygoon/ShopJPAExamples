@@ -16,4 +16,7 @@ public interface ItemRepository extends JpaRepository<Item, Long> {
 
     // 상품 이름이나 설명으로 객체를 찾는 메서드
     List<Item> findItemByNameOrDetail(String name, String detail);
+
+    // 파라미터로 전달된 가격보다 더 저렴한 상품을 찾는 메서드
+    List<Item> findItemByPriceLessThan(int price);
 }
