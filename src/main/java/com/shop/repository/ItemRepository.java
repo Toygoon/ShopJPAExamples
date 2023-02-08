@@ -28,4 +28,8 @@ public interface ItemRepository extends JpaRepository<Item, Long> {
     // Query 문을 이용하여 상품 설명으로 객체를 찾는 메서드
     @Query("SELECT name FROM Item WHERE detail LIKE %:detail% ORDER BY price DESC")
     List<Item> findItemByDetail(@Param("detail") String detail);
+
+    // Query 문의 nativeQuery 속성을 이용한 예제
+    @Query(value = "SELECT * FROM Item i WHERE i.detail LIKE %:detail% ORDER BY i.price DESC", nativeQuery = true)
+    List<Item> findItemByDetailNative(@Param("detail") String detail);
 }
