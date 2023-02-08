@@ -59,4 +59,14 @@ class ItemRepositoryTest {
         for (Item item : itemList)
             System.out.println(item);
     }
+
+    @Test
+    @DisplayName("@Query를 이용한 상품 조회 테스트")
+    public void findItemByDetailTest() {
+        this.createItemTest();
+        List<Item> itemList = itemRepository.findItemByDetail("테스트 상품 상세 설명" + (new Random().nextInt() % TEST_ITEMS + 1));
+
+        for (Item item : itemList)
+            System.out.println(item);
+    }
 }
